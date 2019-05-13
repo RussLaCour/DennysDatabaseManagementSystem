@@ -24,7 +24,13 @@ create table customers
     customer_last_name varchar(20) not null,
     credit_card_number varchar(40) not null,
     csc_no varchar(3) not null,
-    expiration_date date not null
+    expiration_date date not null,
+    restaurant_id int not null,
+    
+    constraint restaurant_fk_id5
+		foreign key (restaurant_id)
+        references restaurants(restaurant_id)
+    
 );
 
 
@@ -113,11 +119,11 @@ INSERT INTO restaurants VALUES
 (default, 010, 'Anaheim', 'California', 92899, 7185555560, 'Mickey', 'Mouse', '1000000.00');
 
 Insert into customers values
-(default, 001, 'Yi Zen', 'Looi', '004333477573333', '222', '2020-06-17'),
-(default, 002, 'David', 'LaCour', '8888333355328892', '355', '2023-10-31'),
-(default, 003, 'Onix', 'Bobe', '123456789002', '232', '2021-06-14'),
-(default, 004, 'Ricardo', 'Phillipe', '7777333432239553', '398', '2019-07-04'),
-(default, 005, 'Mohammad', 'Baidas', '3332293941106668', '666', '2024-08-24');
+(default, 001, 'Yi Zen', 'Looi', '004333477573333', '222', '2020-06-17', 5),
+(default, 002, 'David', 'LaCour', '8888333355328892', '355', '2023-10-31', 2),
+(default, 003, 'Onix', 'Bobe', '123456789002', '232', '2021-06-14', 1),
+(default, 004, 'Ricardo', 'Phillipe', '7777333432239553', '398', '2019-07-04', 9),
+(default, 005, 'Mohammad', 'Baidas', '3332293941106668', '666', '2024-08-24', 10);
 
 INSERT INTO employees values
 (default, 'Johnny', 'Twobyfour', 888783, 'Cook', '13000.33', 5),
